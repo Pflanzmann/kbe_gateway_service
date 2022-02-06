@@ -1,6 +1,17 @@
 spring:
   cloud:
     gateway:
+      globalcors:
+        corsConfigurations:
+          '[/*]':
+            allowedOrigins: "http://localhost:3000/"
+            allowedHeaders: ""
+            allowedMethods:
+              - GET
+              - POST
+              - DELETE
+              - PUT
+              - OPTIONS
       routes:
         - id: kbe_application_service
           uri: http://localhost:8081/
